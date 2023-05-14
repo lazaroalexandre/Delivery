@@ -6,6 +6,7 @@ import '../../core/ui/helpers/messages.dart';
 import '../../core/ui/helpers/size_extensions.dart';
 import '../../core/ui/styles/app_style.dart';
 import '../../core/ui/styles/app_text_style.dart';
+import '../templates/base_layout.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -18,11 +19,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with Loader, Messages {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home Page'),
-      ),
-      body: Column(
+    return Container(
+      child: Column(
         children: [
 /*           Text(context.screenWidth.toString()),
           Text("Text Bold", style: context.appTextStyles.textBold,), */
@@ -45,8 +43,8 @@ class _HomePageState extends State<HomePage> with Loader, Messages {
             }, child: Text("Clique aqui")),
           )
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
+      ),);
+      /* floatingActionButton: FloatingActionButton(
         onPressed: () async {
           showLoader();
           await Future.delayed(const Duration(seconds: 2));
@@ -54,6 +52,6 @@ class _HomePageState extends State<HomePage> with Loader, Messages {
           showError('Deu Erro!');
         },
       ),
-    );
+    ); */
   }
 }
