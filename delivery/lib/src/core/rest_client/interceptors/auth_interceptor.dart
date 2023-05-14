@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 
 import '../../global/constants.dart';
 import '../../storage/storage.dart';
-import '../../global/gobal_context.dart';
+import '../../global/global_context.dart';
 
 class AuthInterceptor extends Interceptor {
   final Storage storage;
@@ -22,7 +22,7 @@ class AuthInterceptor extends Interceptor {
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) {
     if (err.response?.statusCode == 401) {
-      GobalContext.instance.loginExpire();
+      GlobalContext.instance.loginExpire();
     } else {
       handler.next(err);
     }

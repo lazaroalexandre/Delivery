@@ -5,15 +5,15 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 import '../storage/storage.dart';
 
-class GobalContext {
+class GlobalContext {
   late final GlobalKey<NavigatorState> _navigatorKey;
 
-  static GobalContext? _instance;
+  static GlobalContext? _instance;
   
   // Avoid self isntance
-  GobalContext._();
-  static GobalContext get instance {
-    _instance ??= GobalContext._();
+  GlobalContext._();
+  static GlobalContext get instance {
+    _instance ??= GlobalContext._();
     return _instance!;
   }
 
